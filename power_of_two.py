@@ -6,7 +6,7 @@
 
 
 def main():
-    # Imitating variables.
+    # Initiating variables.
     counter = 0
     power = 0
 
@@ -18,16 +18,22 @@ def main():
         # Converting user input from a string to an integer.
         user_number_as_integer = int(user_number_as_string)
 
-        # If their input is greater than 0, then run for loop.
-        if user_number_as_integer >= 0:
-            # Calculate the power of all numbers from 0 to the user's number.
-            for counter in range(user_number_as_integer + 1):
-                power = counter**2
-                print("{}^2 = {}".format(counter, power))
-                counter = counter + 1
-        # Else they inputted a negative number.
+        # If the user input is a negative number.
+        if user_number_as_integer < 0:
+            print(
+                "{} is a negative number. Please try again.".format(
+                    user_number_as_string
+                )
+            )
+
+        # Else their input is greater than 0, then run for loop.
         else:
-            print("{} is a negative number.".format(user_number_as_string))
+            # When counter is greater than or equal to user input, increment the counter.
+            for counter in range(user_number_as_integer + 1):
+                # Calculate the power of all numbers from 0 to the user's number.
+                power = counter**2
+                # Display the calculated output back to the user.
+                print("{}^2 = {}".format(counter, power))
 
     # Catching any errors.
     except:
